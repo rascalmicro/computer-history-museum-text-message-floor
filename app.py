@@ -12,7 +12,7 @@ app = Flask(__name__)
 # app.config['PROPAGATE_EXCEPTIONS'] = True
 
 # Include "no-cache" header in all POST responses
-@public.after_request
+@app.after_request
 def add_no_cache(response):
     if request.method == 'POST':
         response.cache_control.no_cache = True
